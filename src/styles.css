@@ -64,7 +64,32 @@
 @layer base {
   * {
     border-color: var(--color-border);
-  }
+}
+
+.dark {
+  --background: oklch(0.18 0.03 250);
+  --foreground: oklch(0.96 0.01 240);
+  --card: oklch(0.23 0.035 250);
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.23 0.035 250);
+  --popover-foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.72 0.14 245);
+  --primary-foreground: oklch(0.18 0.03 250);
+  --secondary: oklch(0.27 0.04 250);
+  --secondary-foreground: oklch(0.96 0.01 240);
+  --muted: oklch(0.27 0.04 250);
+  --muted-foreground: oklch(0.7 0.03 245);
+  --accent: oklch(0.32 0.06 250);
+  --accent-foreground: oklch(0.96 0.01 240);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.72 0.14 245);
+
+  --gradient-warm: linear-gradient(135deg, oklch(0.2 0.03 250), oklch(0.28 0.06 250));
+  --gradient-primary: linear-gradient(135deg, oklch(0.72 0.14 245), oklch(0.55 0.16 255));
+  --shadow-soft: 0 10px 40px -15px oklch(0.5 0.2 250 / 0.5);
+  --shadow-card: 0 4px 20px -8px oklch(0 0 0 / 0.4);
+}
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
