@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-portrait.jpg";
+import heroAsset from "@/assets/aj-portrait.jpg.asset.json";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
@@ -116,15 +116,16 @@ function Portfolio() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/60">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Logo />
-          <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+          <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
             <li><a href="#services" className="hover:text-foreground transition">Services</a></li>
             <li><a href="#experience" className="hover:text-foreground transition">Experience</a></li>
             <li><a href="#work" className="hover:text-foreground transition">Work</a></li>
             <li><a href="#testimonials" className="hover:text-foreground transition">Testimonials</a></li>
+            <li><a href="#contact" className="hover:text-foreground transition">Contact</a></li>
           </ul>
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+            <a href="#contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
               Hire me <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -160,10 +161,10 @@ function Portfolio() {
               <div><div className="font-display text-2xl text-foreground">2</div>languages</div>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/10 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-card">
-              <img src={heroImg} alt="AJ Pasco at work" width={1024} height={1024} className="h-full w-full object-cover" />
+          <div className="relative flex justify-center md:justify-end">
+            <div className="absolute inset-0 rounded-full bg-primary/15 blur-3xl" />
+            <div className="relative aspect-square w-72 sm:w-80 md:w-[420px] overflow-hidden rounded-full ring-4 ring-primary/40 ring-offset-4 ring-offset-background shadow-soft">
+              <img src={heroAsset.url} alt="AJ Pasco portrait" width={1024} height={1024} className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
