@@ -3,6 +3,8 @@ import heroImg from "@/assets/hero-portrait.jpg";
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
 import work3 from "@/assets/work-3.jpg";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Megaphone,
   Palette, ClipboardList, Quote, Linkedin, Send,
