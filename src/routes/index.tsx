@@ -133,32 +133,38 @@ function Portfolio() {
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-warm">
+      <section className="relative bg-gradient-warm">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-primary" /> Available for new clients
-            </span>
-            <h1 className="mt-6 text-5xl leading-[1.05] md:text-7xl">
-              Hi, I'm <span className="text-gradient">AJ Pasco</span> — your next virtual assistant.
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-12 bg-primary" />
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                Virtual Assistant & Social Media Manager
+              </span>
+            </div>
+            <h1 className="text-5xl leading-[1.05] md:text-7xl">
+              Hi, I'm <span className="text-gradient">AJ Pasco</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
               Detail-oriented general VA, social media manager, and multilingual chat support helping small businesses stay organized and grow online.
             </p>
+            <div className="mt-7 flex flex-wrap gap-2.5">
+              {["General VA", "Social Media", "Canva Design", "Chat Support"].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-primary/40 bg-card/60 px-4 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
                 Let's work together <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#work" className="inline-flex items-center rounded-full border border-border bg-card px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95">
-                View my work
+              <a href="#experience" className="inline-flex items-center rounded-full border border-border bg-card px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95">
+                View my experience
               </a>
-            </div>
-            <div className="mt-10 flex items-center gap-6 text-sm text-muted-foreground">
-              <div><div className="font-display text-2xl text-foreground">3+</div>roles delivered</div>
-              <div className="h-8 w-px bg-border" />
-              <div><div className="font-display text-2xl text-foreground">Cum Laude</div>BSEd graduate</div>
-              <div className="h-8 w-px bg-border" />
-              <div><div className="font-display text-2xl text-foreground">2</div>languages</div>
             </div>
           </div>
           <div className="relative flex justify-center md:justify-end">
@@ -168,6 +174,13 @@ function Portfolio() {
             </div>
           </div>
         </div>
+        <a
+          href="#services"
+          className="flex flex-col items-center gap-2 pb-10 text-xs uppercase tracking-[0.25em] text-muted-foreground transition hover:text-primary"
+        >
+          <span>Scroll and get to know me</span>
+          <ChevronDown className="h-4 w-4 animate-bounce" />
+        </a>
       </section>
 
       {/* Services */}
