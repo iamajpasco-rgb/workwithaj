@@ -252,7 +252,7 @@ function Portfolio() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t) => (
               <figure key={t.name} className="rounded-2xl border border-border bg-card p-8 shadow-card">
                 <Quote className="h-7 w-7 text-primary" />
