@@ -191,15 +191,27 @@ function Portfolio() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Experience</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Where I've worked</h2>
-          <div className="mt-12 space-y-3">
+          <div className="mt-12 space-y-5">
             {experience.map((e, i) => (
-              <div key={i} className="group grid grid-cols-12 items-center gap-4 rounded-2xl border border-border bg-card px-6 py-6 transition hover:shadow-card">
-                <div className="col-span-12 md:col-span-1 font-display text-2xl text-primary">0{i + 1}</div>
-                <div className="col-span-12 md:col-span-5">
-                  <h3 className="text-xl">{e.role}</h3>
+              <div key={i} className="rounded-2xl border border-border bg-card p-6 md:p-8 transition hover:shadow-card">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="font-display text-2xl text-primary">0{i + 1}</div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl">{e.role}</h3>
+                      <p className="mt-1 text-muted-foreground">{e.company}</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">{e.period}</span>
                 </div>
-                <div className="col-span-6 md:col-span-3 text-muted-foreground">{e.company}</div>
-                <div className="col-span-6 md:col-span-3 text-right text-sm text-muted-foreground">{e.period}</div>
+                <ul className="mt-5 grid gap-2.5 md:pl-10">
+                  {e.bullets.map((b, j) => (
+                    <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
