@@ -28,9 +28,45 @@ const services = [
 ];
 
 const experience = [
-  { role: "Chat Support Multilingual", company: "Nick Ecommerce", period: "Jan 2026 – Jun 2026" },
-  { role: "Social Media Manager", company: "Doventra Productions", period: "Sep 2025 – Dec 2025" },
-  { role: "Student Intern · Canva Editor", company: "ITalk Philippines", period: "Jan 2025 – Aug 2025" },
+  {
+    role: "Chat Support Specialist",
+    company: "Nick Ecommerce",
+    period: "Jan 2026 – Jun 2026",
+    bullets: [
+      "Provided multilingual chat support to customers, resolving inquiries efficiently and maintaining high customer satisfaction.",
+      "Assisted with order tracking, product information, payment concerns, and account-related issues.",
+      "Managed multiple conversations simultaneously while maintaining accuracy and professionalism.",
+      "Escalated complex concerns to the appropriate departments to ensure timely resolution.",
+      "Maintained detailed records of customer interactions and support activities.",
+      "Contributed to improving customer experience through prompt and effective communication.",
+    ],
+  },
+  {
+    role: "Social Media Manager",
+    company: "Doventra Productions",
+    period: "Sep 2025 – Dec 2025",
+    bullets: [
+      "Managed and maintained social media accounts across multiple platforms to increase brand visibility and engagement.",
+      "Created and scheduled content using social media management tools to ensure consistent posting.",
+      "Designed promotional graphics and marketing materials using Canva.",
+      "Responded to messages, comments, and community inquiries to strengthen audience engagement.",
+      "Monitored content performance and engagement metrics to support content strategy decisions.",
+      "Assisted in developing campaigns that enhanced online presence and audience reach.",
+    ],
+  },
+  {
+    role: "Canva Editor Intern",
+    company: "ITalk Philippines",
+    period: "Jan 2025 – Aug 2025",
+    bullets: [
+      "Designed educational and promotional graphics using Canva for digital marketing initiatives.",
+      "Produced visual content aligned with brand guidelines and campaign objectives.",
+      "Collaborated with team members to develop engaging social media materials and presentations.",
+      "Edited and enhanced graphic assets to improve visual consistency and quality.",
+      "Assisted in organizing design resources and maintaining content libraries.",
+      "Supported marketing activities through the creation of creative and audience-focused visual content.",
+    ],
+  },
 ];
 
 const works = [
@@ -40,9 +76,26 @@ const works = [
 ];
 
 const testimonials = [
-  { quote: "AJ was incredibly organized and proactive. Our social channels grew measurably under her care.", name: "Maria L.", role: "Doventra Productions" },
-  { quote: "Reliable, fast, and detail-oriented. She handled multilingual chat with grace under pressure.", name: "Ken T.", role: "Nick Ecommerce" },
-  { quote: "Beautiful Canva work and a thoughtful collaborator. Highly recommend.", name: "Jamie R.", role: "ITalk Philippines" },
+  {
+    quote: "AJ has been an absolute game-changer for our social channels. She brought structure to our calendar, kept content consistent for months, and engaged with our community in a voice that felt authentically ours. Our reach and saves grew steadily under her care.",
+    name: "Maria L.", role: "Doventra Productions",
+  },
+  {
+    quote: "Reliable, fast, and incredibly detail-oriented. AJ handled multilingual chat under high volume without losing her warmth — customers consistently mentioned how helpful she was. She also flagged recurring issues that helped us fix product friction.",
+    name: "Ken T.", role: "Nick Ecommerce",
+  },
+  {
+    quote: "Her Canva work is consistently on-brand, clean, and quick to turn around. AJ asks the right questions upfront and rarely needs more than one round of revisions. She has become our go-to for promotional graphics and campaign assets.",
+    name: "Jamie R.", role: "ITalk Philippines",
+  },
+  {
+    quote: "What I appreciate most about AJ is her ownership. She doesn't wait to be told — she organizes, follows up, and brings small improvements to every workflow she touches. Working with her feels like having a real teammate, not just a contractor.",
+    name: "Patricia M.", role: "Independent Client",
+  },
+  {
+    quote: "AJ supported our launch week and kept everything from inbox triage to social replies running smoothly. She's calm under pressure, communicates clearly, and genuinely cares about doing great work. I'd hire her again in a heartbeat.",
+    name: "Daniel C.", role: "E-commerce Founder",
+  },
 ];
 
 function Logo() {
@@ -138,15 +191,27 @@ function Portfolio() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Experience</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Where I've worked</h2>
-          <div className="mt-12 space-y-3">
+          <div className="mt-12 space-y-5">
             {experience.map((e, i) => (
-              <div key={i} className="group grid grid-cols-12 items-center gap-4 rounded-2xl border border-border bg-card px-6 py-6 transition hover:shadow-card">
-                <div className="col-span-12 md:col-span-1 font-display text-2xl text-primary">0{i + 1}</div>
-                <div className="col-span-12 md:col-span-5">
-                  <h3 className="text-xl">{e.role}</h3>
+              <div key={i} className="rounded-2xl border border-border bg-card p-6 md:p-8 transition hover:shadow-card">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="font-display text-2xl text-primary">0{i + 1}</div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl">{e.role}</h3>
+                      <p className="mt-1 text-muted-foreground">{e.company}</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">{e.period}</span>
                 </div>
-                <div className="col-span-6 md:col-span-3 text-muted-foreground">{e.company}</div>
-                <div className="col-span-6 md:col-span-3 text-right text-sm text-muted-foreground">{e.period}</div>
+                <ul className="mt-5 grid gap-2.5 md:pl-10">
+                  {e.bullets.map((b, j) => (
+                    <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -187,7 +252,7 @@ function Portfolio() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t) => (
               <figure key={t.name} className="rounded-2xl border border-border bg-card p-8 shadow-card">
                 <Quote className="h-7 w-7 text-primary" />
