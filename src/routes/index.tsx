@@ -116,15 +116,16 @@ function Portfolio() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/60">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Logo />
-          <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+          <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
             <li><a href="#services" className="hover:text-foreground transition">Services</a></li>
             <li><a href="#experience" className="hover:text-foreground transition">Experience</a></li>
             <li><a href="#work" className="hover:text-foreground transition">Work</a></li>
             <li><a href="#testimonials" className="hover:text-foreground transition">Testimonials</a></li>
+            <li><a href="#contact" className="hover:text-foreground transition">Contact</a></li>
           </ul>
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+            <a href="#contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
               Hire me <ArrowRight className="h-4 w-4" />
             </a>
           </div>
