@@ -179,14 +179,16 @@ function Portfolio() {
           <p className="max-w-md text-muted-foreground">From inbox zero to social calendars — I handle the work so you can focus on growth.</p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <div key={s.title} className="group rounded-2xl border border-border bg-card p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary">
-                <s.icon className="h-6 w-6" />
+          {services.map((s, i) => (
+            <Reveal key={s.title} delay={i * 80}>
+              <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30 cursor-pointer active:scale-95">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                  <s.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-xl">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
               </div>
-              <h3 className="mt-5 text-xl">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -198,26 +200,28 @@ function Portfolio() {
           <h2 className="mt-3 text-4xl md:text-5xl">Where I've worked</h2>
           <div className="mt-12 space-y-5">
             {experience.map((e, i) => (
-              <div key={i} className="rounded-2xl border border-border bg-card p-6 md:p-8 transition hover:shadow-card">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div className="flex items-start gap-4">
-                    <div className="font-display text-2xl text-primary">0{i + 1}</div>
-                    <div>
-                      <h3 className="text-xl md:text-2xl">{e.role}</h3>
-                      <p className="mt-1 text-muted-foreground">{e.company}</p>
+              <Reveal key={i} delay={i * 100}>
+                <div className="rounded-2xl border border-border bg-card p-6 md:p-8 transition-all duration-300 hover:shadow-soft hover:border-primary/30 hover:-translate-y-1">
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="font-display text-2xl text-primary">0{i + 1}</div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl">{e.role}</h3>
+                        <p className="mt-1 text-muted-foreground">{e.company}</p>
+                      </div>
                     </div>
+                    <span className="rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">{e.period}</span>
                   </div>
-                  <span className="rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">{e.period}</span>
+                  <ul className="mt-5 grid gap-2.5 md:pl-10">
+                    {e.bullets.map((b, j) => (
+                      <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="mt-5 grid gap-2.5 md:pl-10">
-                  {e.bullets.map((b, j) => (
-                    <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </Reveal>
             ))}
           </div>
           <div className="mt-10 rounded-2xl border border-border bg-card p-8">
@@ -238,16 +242,18 @@ function Portfolio() {
           </div>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {works.map((w) => (
-            <article key={w.title} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-              <div className="aspect-[4/5] overflow-hidden">
-                <img src={w.img} alt={w.title} width={1024} height={1024} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-              </div>
-              <div className="p-6">
-                <p className="text-xs uppercase tracking-widest text-primary">{w.tag}</p>
-                <h3 className="mt-2 text-xl">{w.title}</h3>
-              </div>
-            </article>
+          {works.map((w, i) => (
+            <Reveal key={w.title} delay={i * 120}>
+              <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img src={w.img} alt={w.title} width={1024} height={1024} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs uppercase tracking-widest text-primary">{w.tag}</p>
+                  <h3 className="mt-2 text-xl">{w.title}</h3>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -258,15 +264,17 @@ function Portfolio() {
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t) => (
-              <figure key={t.name} className="rounded-2xl border border-border bg-card p-8 shadow-card">
-                <Quote className="h-7 w-7 text-primary" />
-                <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
-                <figcaption className="mt-6 border-t border-border pt-4">
-                  <div className="font-medium">{t.name}</div>
-                  <div className="text-sm text-muted-foreground">{t.role}</div>
-                </figcaption>
-              </figure>
+            {testimonials.map((t, i) => (
+              <Reveal key={t.name} delay={i * 90}>
+                <figure className="h-full rounded-2xl border border-border bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
+                  <Quote className="h-7 w-7 text-primary" />
+                  <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
+                  <figcaption className="mt-6 border-t border-border pt-4">
+                    <div className="font-medium">{t.name}</div>
+                    <div className="text-sm text-muted-foreground">{t.role}</div>
+                  </figcaption>
+                </figure>
+              </Reveal>
             ))}
           </div>
         </div>
