@@ -28,9 +28,45 @@ const services = [
 ];
 
 const experience = [
-  { role: "Chat Support Multilingual", company: "Nick Ecommerce", period: "Jan 2026 – Jun 2026" },
-  { role: "Social Media Manager", company: "Doventra Productions", period: "Sep 2025 – Dec 2025" },
-  { role: "Student Intern · Canva Editor", company: "ITalk Philippines", period: "Jan 2025 – Aug 2025" },
+  {
+    role: "Chat Support Specialist",
+    company: "Nick Ecommerce",
+    period: "Jan 2026 – Jun 2026",
+    bullets: [
+      "Provided multilingual chat support to customers, resolving inquiries efficiently and maintaining high customer satisfaction.",
+      "Assisted with order tracking, product information, payment concerns, and account-related issues.",
+      "Managed multiple conversations simultaneously while maintaining accuracy and professionalism.",
+      "Escalated complex concerns to the appropriate departments to ensure timely resolution.",
+      "Maintained detailed records of customer interactions and support activities.",
+      "Contributed to improving customer experience through prompt and effective communication.",
+    ],
+  },
+  {
+    role: "Social Media Manager",
+    company: "Doventra Productions",
+    period: "Sep 2025 – Dec 2025",
+    bullets: [
+      "Managed and maintained social media accounts across multiple platforms to increase brand visibility and engagement.",
+      "Created and scheduled content using social media management tools to ensure consistent posting.",
+      "Designed promotional graphics and marketing materials using Canva.",
+      "Responded to messages, comments, and community inquiries to strengthen audience engagement.",
+      "Monitored content performance and engagement metrics to support content strategy decisions.",
+      "Assisted in developing campaigns that enhanced online presence and audience reach.",
+    ],
+  },
+  {
+    role: "Canva Editor Intern",
+    company: "ITalk Philippines",
+    period: "Jan 2025 – Aug 2025",
+    bullets: [
+      "Designed educational and promotional graphics using Canva for digital marketing initiatives.",
+      "Produced visual content aligned with brand guidelines and campaign objectives.",
+      "Collaborated with team members to develop engaging social media materials and presentations.",
+      "Edited and enhanced graphic assets to improve visual consistency and quality.",
+      "Assisted in organizing design resources and maintaining content libraries.",
+      "Supported marketing activities through the creation of creative and audience-focused visual content.",
+    ],
+  },
 ];
 
 const works = [
@@ -40,9 +76,26 @@ const works = [
 ];
 
 const testimonials = [
-  { quote: "AJ was incredibly organized and proactive. Our social channels grew measurably under her care.", name: "Maria L.", role: "Doventra Productions" },
-  { quote: "Reliable, fast, and detail-oriented. She handled multilingual chat with grace under pressure.", name: "Ken T.", role: "Nick Ecommerce" },
-  { quote: "Beautiful Canva work and a thoughtful collaborator. Highly recommend.", name: "Jamie R.", role: "ITalk Philippines" },
+  {
+    quote: "AJ has been an absolute game-changer for our social channels. She brought structure to our calendar, kept content consistent for months, and engaged with our community in a voice that felt authentically ours. Our reach and saves grew steadily under her care.",
+    name: "Maria L.", role: "Doventra Productions",
+  },
+  {
+    quote: "Reliable, fast, and incredibly detail-oriented. AJ handled multilingual chat under high volume without losing her warmth — customers consistently mentioned how helpful she was. She also flagged recurring issues that helped us fix product friction.",
+    name: "Ken T.", role: "Nick Ecommerce",
+  },
+  {
+    quote: "Her Canva work is consistently on-brand, clean, and quick to turn around. AJ asks the right questions upfront and rarely needs more than one round of revisions. She has become our go-to for promotional graphics and campaign assets.",
+    name: "Jamie R.", role: "ITalk Philippines",
+  },
+  {
+    quote: "What I appreciate most about AJ is her ownership. She doesn't wait to be told — she organizes, follows up, and brings small improvements to every workflow she touches. Working with her feels like having a real teammate, not just a contractor.",
+    name: "Patricia M.", role: "Independent Client",
+  },
+  {
+    quote: "AJ supported our launch week and kept everything from inbox triage to social replies running smoothly. She's calm under pressure, communicates clearly, and genuinely cares about doing great work. I'd hire her again in a heartbeat.",
+    name: "Daniel C.", role: "E-commerce Founder",
+  },
 ];
 
 function Logo() {
