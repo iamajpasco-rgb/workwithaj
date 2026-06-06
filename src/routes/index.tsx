@@ -120,9 +120,12 @@ function Portfolio() {
             <li><a href="#work" className="hover:text-foreground transition">Work</a></li>
             <li><a href="#testimonials" className="hover:text-foreground transition">Testimonials</a></li>
           </ul>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 transition">
-            Hire me <ArrowRight className="h-4 w-4" />
-          </a>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+              Hire me <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </nav>
       </header>
 
@@ -140,10 +143,10 @@ function Portfolio() {
               Detail-oriented general VA, social media manager, and multilingual chat support helping small businesses stay organized and grow online.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 transition">
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
                 Let's work together <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#work" className="inline-flex items-center rounded-full border border-border bg-card px-6 py-3 text-sm font-medium hover:bg-accent transition">
+              <a href="#work" className="inline-flex items-center rounded-full border border-border bg-card px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95">
                 View my work
               </a>
             </div>
