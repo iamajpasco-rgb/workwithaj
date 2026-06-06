@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Megaphone,
-  Palette, ClipboardList, Quote, Linkedin, Send,
+  Palette, ClipboardList, Quote, Linkedin, Send, ChevronDown,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
