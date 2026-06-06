@@ -72,9 +72,9 @@ const experience = [
 ];
 
 const works = [
-  { img: work1Asset.url, title: "Brand Visual System", tag: "Canva Design" },
+  { img: work3Asset.url, title: "Brand Visual System", tag: "Canva Design" },
   { img: work2Asset.url, title: "Detailed Management Operations", tag: "Social Media" },
-  { img: work3Asset.url, title: "Workflow Optimization", tag: "Admin Support" },
+  { img: work1Asset.url, title: "Workflow Optimization", tag: "Admin Support" },
 ];
 
 const testimonials = [
