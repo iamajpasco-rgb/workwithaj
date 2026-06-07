@@ -278,9 +278,11 @@ function Portfolio() {
           <h2 className="mt-3 text-4xl md:text-5xl">Selected projects &amp; highlights</h2>
           <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {works.map((w, i) => (
-            <Reveal key={w.title} delay={i * 100} className={i === 4 ? "lg:col-start-2" : ""}>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+          {works.map((w, i) => {
+            const start = i === 3 ? "lg:col-start-2" : i === 4 ? "lg:col-start-4" : "";
+            return (
+            <Reveal key={w.title} delay={i * 100} className={`lg:col-span-2 ${start}`}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
                 <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/80 via-primary to-primary/60 flex items-center justify-center">
                   <span className="font-display text-7xl font-bold text-background/90 transition-transform duration-500 group-hover:scale-110">
@@ -294,7 +296,8 @@ function Portfolio() {
                 </div>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </section>
 
