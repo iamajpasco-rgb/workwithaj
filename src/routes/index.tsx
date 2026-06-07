@@ -307,9 +307,11 @@ function Portfolio() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 90} className={i === 4 ? "lg:col-start-2" : ""}>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+            {testimonials.map((t, i) => {
+              const start = i === 3 ? "lg:col-start-2" : i === 4 ? "lg:col-start-4" : "";
+              return (
+              <Reveal key={t.name} delay={i * 90} className={`lg:col-span-2 ${start}`}>
                 <figure className="h-full rounded-2xl border border-border bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
                   <Quote className="h-7 w-7 text-primary" />
                   <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
@@ -319,7 +321,8 @@ function Portfolio() {
                   </figcaption>
                 </figure>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
