@@ -286,8 +286,8 @@ function Portfolio() {
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 90}>
-                <figure className={`h-full rounded-2xl border border-border bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30 ${i === 4 ? "lg:col-start-2" : ""}`}>
+              <Reveal key={t.name} delay={i * 90} className={i === 4 ? "lg:col-start-2" : ""}>
+                <figure className="h-full rounded-2xl border border-border bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
                   <Quote className="h-7 w-7 text-primary" />
                   <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
                   <figcaption className="mt-6 border-t border-border pt-4">
