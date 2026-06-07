@@ -256,28 +256,31 @@ function Portfolio() {
 
       {/* Work */}
       <section id="work" className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Selected Work</p>
-            <h2 className="mt-3 text-4xl md:text-5xl">Recent projects</h2>
-          </div>
+        <div className="text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-primary">Previous Works</p>
+          <h2 className="mt-3 text-4xl md:text-5xl">Selected projects &amp; highlights</h2>
+          <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {works.map((w, i) => (
-            <Reveal key={w.title} delay={i * 120}>
+            <Reveal key={w.title} delay={i * 100}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img src={w.img} alt={w.title} width={1024} height={1024} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/80 via-primary to-primary/60 flex items-center justify-center">
+                  <span className="font-display text-7xl font-bold text-background/90 transition-transform duration-500 group-hover:scale-110">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-widest text-primary">{w.tag}</p>
-                  <h3 className="mt-2 text-xl">{w.title}</h3>
+                  <span className="inline-block rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-foreground">{w.tag}</span>
+                  <h3 className="mt-3 text-lg font-semibold">{w.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{w.desc}</p>
                 </div>
               </article>
             </Reveal>
           ))}
         </div>
       </section>
+
 
       {/* Testimonials */}
       <section id="testimonials" className="bg-gradient-warm border-y border-border">
