@@ -193,12 +193,10 @@ function Portfolio() {
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Services</p>
-            <h2 className="mt-3 text-4xl md:text-5xl">What I help with</h2>
-          </div>
-          <p className="max-w-md text-muted-foreground">From inbox zero to social calendars — I handle the work so you can focus on growth.</p>
+        <div className="text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-primary">Services</p>
+          <h2 className="mt-3 text-4xl md:text-5xl">What I can do for you</h2>
+          <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
@@ -214,6 +212,7 @@ function Portfolio() {
           ))}
         </div>
       </section>
+
 
       {/* Experience */}
       <section id="experience" className="bg-secondary/40 border-y border-border">
