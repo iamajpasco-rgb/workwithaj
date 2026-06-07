@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroAsset from "@/assets/aj-portrait.jpg.asset.json";
-import work1Asset from "@/assets/work-spreadsheet.jpg.asset.json";
-import work2Asset from "@/assets/work-social.png.asset.json";
-import work3Asset from "@/assets/work-canva.png.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
