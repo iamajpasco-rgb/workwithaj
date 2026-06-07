@@ -248,6 +248,26 @@ function Portfolio() {
               Bachelor of Secondary Education, Major in Social Studies — <span className="text-foreground">Bago City College</span> · Graduated <span className="text-primary font-medium">Cum Laude</span>, 2025
             </p>
           </div>
+          <div className="mt-6 rounded-2xl border border-border bg-card p-8">
+            <h3 className="text-xl">Tools &amp; Technologies</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {[
+                "Canva", "CapCut", "Adobe Express",
+                "Meta Business Suite", "Buffer", "Facebook Pages",
+                "Google Workspace (Docs, Sheets, Drive, Gmail)",
+                "Microsoft Office (Word, Excel, PowerPoint)",
+                "Chat Support Platforms & Customer Service Tools",
+                "Social Media Management & Content Scheduling Tools",
+                "AI Tools (ChatGPT, Claude, Gemini)",
+                "File Management & Cloud Storage Systems",
+                "Administrative Support & Data Entry Applications",
+              ].map((tool) => (
+                <span key={tool} className="rounded-full border border-primary/40 bg-background px-4 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -260,7 +280,7 @@ function Portfolio() {
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {works.map((w, i) => (
-            <Reveal key={w.title} delay={i * 100}>
+            <Reveal key={w.title} delay={i * 100} className={i === 4 ? "lg:col-start-2" : ""}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
                 <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/80 via-primary to-primary/60 flex items-center justify-center">
                   <span className="font-display text-7xl font-bold text-background/90 transition-transform duration-500 group-hover:scale-110">
@@ -286,7 +306,7 @@ function Portfolio() {
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 90}>
+              <Reveal key={t.name} delay={i * 90} className={i === 4 ? "lg:col-start-2" : ""}>
                 <figure className="h-full rounded-2xl border border-border bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
                   <Quote className="h-7 w-7 text-primary" />
                   <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
