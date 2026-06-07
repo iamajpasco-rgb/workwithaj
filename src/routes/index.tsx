@@ -5,6 +5,9 @@ import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
   Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
+  Palette, Scissors, Sparkles, Facebook, Calendar, Image as ImageIcon,
+  MousePointerClick, FileText, BookOpen, Headphones, Bot, Heart,
+  KeyRound, FolderOpen, ClipboardList,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
