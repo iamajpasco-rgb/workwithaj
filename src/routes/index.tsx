@@ -248,6 +248,26 @@ function Portfolio() {
               Bachelor of Secondary Education, Major in Social Studies — <span className="text-foreground">Bago City College</span> · Graduated <span className="text-primary font-medium">Cum Laude</span>, 2025
             </p>
           </div>
+          <div className="mt-6 rounded-2xl border border-border bg-card p-8">
+            <h3 className="text-xl">Tools &amp; Technologies</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {[
+                "Canva", "CapCut", "Adobe Express",
+                "Meta Business Suite", "Buffer", "Facebook Pages",
+                "Google Workspace (Docs, Sheets, Drive, Gmail)",
+                "Microsoft Office (Word, Excel, PowerPoint)",
+                "Chat Support Platforms & Customer Service Tools",
+                "Social Media Management & Content Scheduling Tools",
+                "AI Tools (ChatGPT, Claude, Gemini)",
+                "File Management & Cloud Storage Systems",
+                "Administrative Support & Data Entry Applications",
+              ].map((tool) => (
+                <span key={tool} className="rounded-full border border-primary/40 bg-background px-4 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10">
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
