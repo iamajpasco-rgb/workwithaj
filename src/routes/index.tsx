@@ -1,13 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroAsset from "@/assets/aj-portrait.jpg.asset.json";
-import work1Asset from "@/assets/work-spreadsheet.jpg.asset.json";
-import work2Asset from "@/assets/work-social.png.asset.json";
-import work3Asset from "@/assets/work-canva.png.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
-  Mail, Phone, MapPin, ArrowRight, MessageCircle, Megaphone,
-  Palette, ClipboardList, Quote, Linkedin, Send, ChevronDown,
+  Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
+  Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -23,10 +20,10 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: ClipboardList, title: "General Virtual Assistance", desc: "Administrative support, calendar and inbox management, data entry, and day-to-day operational help." },
-  { icon: Megaphone, title: "Social Media Management", desc: "Content planning, scheduling, community engagement across Meta, Instagram, and TikTok." },
-  { icon: Palette, title: "Canva Content Design", desc: "On-brand graphics for social posts, promos, and digital marketing campaigns." },
-  { icon: MessageCircle, title: "Multilingual Chat Support", desc: "Timely, professional customer responses in English and Filipino across chat platforms." },
+  { icon: Briefcase, title: "General Virtual Assistance", desc: "Administrative support, file organization, data entry, scheduling, and day-to-day task management to keep your business running smoothly." },
+  { icon: Share2, title: "Social Media Management", desc: "Content creation, scheduling, audience engagement, and performance monitoring across Facebook, Instagram, and more." },
+  { icon: MessageCircle, title: "Chat Support", desc: "Multilingual customer chat support — order tracking, product inquiries, payment concerns, and account assistance." },
+  { icon: Inbox, title: "Email & Inbox Management", desc: "Manage emails, organize inboxes, respond to customer inquiries, schedule follow ups, and maintain clear communication to keep daily operations running efficiently." },
 ];
 
 const experience = [
@@ -72,9 +69,11 @@ const experience = [
 ];
 
 const works = [
-  { img: work3Asset.url, title: "Brand Visual System", tag: "Canva Design" },
-  { img: work2Asset.url, title: "Detailed Management Operations", tag: "Social Media" },
-  { img: work1Asset.url, title: "Workflow Optimization", tag: "Admin Support" },
+  { tag: "Social Media", title: "Social Media Campaign — Doventra", desc: "End-to-end campaign management including content calendar, Canva graphics, and engagement tracking." },
+  { tag: "Chat Support", title: "Multilingual Customer Support", desc: "Handled high-volume support queues for an ecommerce brand with measurable CSAT improvements." },
+  { tag: "Design", title: "Promotional Marketing Assets", desc: "Created promotional banners, posters, and social tiles aligned with brand voice and visual identity." },
+  { tag: "Operations", title: "Content Scheduling Workflow", desc: "Built a streamlined content scheduling workflow using Meta Business Suite and Buffer." },
+  { tag: "Virtual Assistance", title: "Administrative Workflow Setup", desc: "Organized digital records and built repeatable admin workflows that improved operational efficiency." },
 ];
 
 const testimonials = [
@@ -133,21 +132,17 @@ function Portfolio() {
       </header>
 
       {/* Hero */}
-      <section className="relative bg-gradient-warm border-b border-border">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-stretch gap-0 px-0 md:grid-cols-5">
-          <div className="md:col-span-3 bg-card px-8 py-16 md:px-14 md:py-24 flex flex-col justify-center">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Hi there!
+      <section className="relative bg-background border-b border-border overflow-hidden">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 md:py-28 md:grid-cols-2">
+          <div>
+            <div className="h-px w-12 bg-primary" />
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              Chat Support Operations & Social Media Management Operations
             </p>
-            <h1 className="mt-3 text-5xl leading-[1.05] md:text-7xl">
-              I'm <span className="text-gradient">AJ Pasco</span>
+            <h1 className="mt-5 font-display text-5xl leading-[1.05] md:text-7xl">
+              AJ <span className="text-gradient">Pasco</span>
             </h1>
-            <div className="mt-5 inline-block self-start rounded-sm bg-primary px-4 py-1.5">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground">
-                Chat Support Operations & Social Media Management Operations
-              </span>
-            </div>
-            <p className="mt-7 max-w-lg text-base text-muted-foreground leading-relaxed">
+            <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
               Detail-oriented general VA, social media manager, and multilingual chat support helping small businesses stay organized and grow online.
             </p>
             <div className="mt-7 flex flex-wrap gap-2.5">
@@ -161,27 +156,30 @@ function Portfolio() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
-                More about me <ArrowRight className="h-4 w-4" />
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+                Book a Discovery Call
               </a>
-              <a href="#experience" className="inline-flex items-center rounded-full border border-border bg-card px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95">
-                View my experience
+              <a href="#experience" className="inline-flex items-center rounded-md border border-border bg-card px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95">
+                View My Experience
               </a>
             </div>
           </div>
-          <div className="md:col-span-2 relative min-h-[360px] md:min-h-[560px]">
-            <img
-              src={heroAsset.url}
-              alt="AJ Pasco portrait"
-              width={1024}
-              height={1024}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+          <div className="relative flex justify-center md:justify-end">
+            <div className="absolute inset-0 bg-primary/15 blur-3xl rounded-full" aria-hidden />
+            <div className="relative aspect-square w-72 sm:w-80 md:w-[420px] overflow-hidden rounded-full ring-2 ring-primary/60 ring-offset-4 ring-offset-background shadow-soft">
+              <img
+                src={heroAsset.url}
+                alt="AJ Pasco portrait"
+                width={1024}
+                height={1024}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
         <a
           href="#services"
-          className="flex flex-col items-center gap-2 py-8 text-xs uppercase tracking-[0.25em] text-muted-foreground transition hover:text-primary"
+          className="flex flex-col items-center gap-2 pb-8 text-xs uppercase tracking-[0.25em] text-muted-foreground transition hover:text-primary"
         >
           <span>Scroll and get to know me</span>
           <ChevronDown className="h-4 w-4 animate-bounce" />
@@ -189,14 +187,13 @@ function Portfolio() {
       </section>
 
 
+
       {/* Services */}
       <section id="services" className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Services</p>
-            <h2 className="mt-3 text-4xl md:text-5xl">What I help with</h2>
-          </div>
-          <p className="max-w-md text-muted-foreground">From inbox zero to social calendars — I handle the work so you can focus on growth.</p>
+        <div className="text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-primary">Services</p>
+          <h2 className="mt-3 text-4xl md:text-5xl">What I can do for you</h2>
+          <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
@@ -212,6 +209,7 @@ function Portfolio() {
           ))}
         </div>
       </section>
+
 
       {/* Experience */}
       <section id="experience" className="bg-secondary/40 border-y border-border">
@@ -255,28 +253,31 @@ function Portfolio() {
 
       {/* Work */}
       <section id="work" className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Selected Work</p>
-            <h2 className="mt-3 text-4xl md:text-5xl">Recent projects</h2>
-          </div>
+        <div className="text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-primary">Previous Works</p>
+          <h2 className="mt-3 text-4xl md:text-5xl">Selected projects &amp; highlights</h2>
+          <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {works.map((w, i) => (
-            <Reveal key={w.title} delay={i * 120}>
+            <Reveal key={w.title} delay={i * 100}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img src={w.img} alt={w.title} width={1024} height={1024} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+                <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/80 via-primary to-primary/60 flex items-center justify-center">
+                  <span className="font-display text-7xl font-bold text-background/90 transition-transform duration-500 group-hover:scale-110">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-widest text-primary">{w.tag}</p>
-                  <h3 className="mt-2 text-xl">{w.title}</h3>
+                  <span className="inline-block rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-foreground">{w.tag}</span>
+                  <h3 className="mt-3 text-lg font-semibold">{w.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{w.desc}</p>
                 </div>
               </article>
             </Reveal>
           ))}
         </div>
       </section>
+
 
       {/* Testimonials */}
       <section id="testimonials" className="bg-gradient-warm border-y border-border">
