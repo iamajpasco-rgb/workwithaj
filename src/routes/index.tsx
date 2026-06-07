@@ -72,9 +72,11 @@ const experience = [
 ];
 
 const works = [
-  { img: work3Asset.url, title: "Brand Visual System", tag: "Canva Design" },
-  { img: work2Asset.url, title: "Detailed Management Operations", tag: "Social Media" },
-  { img: work1Asset.url, title: "Workflow Optimization", tag: "Admin Support" },
+  { tag: "Social Media", title: "Social Media Campaign — Doventra", desc: "End-to-end campaign management including content calendar, Canva graphics, and engagement tracking." },
+  { tag: "Chat Support", title: "Multilingual Customer Support", desc: "Handled high-volume support queues for an ecommerce brand with measurable CSAT improvements." },
+  { tag: "Design", title: "Promotional Marketing Assets", desc: "Created promotional banners, posters, and social tiles aligned with brand voice and visual identity." },
+  { tag: "Operations", title: "Content Scheduling Workflow", desc: "Built a streamlined content scheduling workflow using Meta Business Suite and Buffer." },
+  { tag: "Virtual Assistance", title: "Administrative Workflow Setup", desc: "Organized digital records and built repeatable admin workflows that improved operational efficiency." },
 ];
 
 const testimonials = [
