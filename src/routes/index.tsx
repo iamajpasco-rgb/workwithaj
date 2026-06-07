@@ -5,6 +5,9 @@ import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
   Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
+  Palette, Scissors, Sparkles, Facebook, Calendar, Image as ImageIcon,
+  MousePointerClick, FileText, BookOpen, Headphones, Bot, Heart,
+  KeyRound, FolderOpen, ClipboardList,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -248,26 +251,95 @@ function Portfolio() {
               Bachelor of Secondary Education, Major in Social Studies — <span className="text-foreground">Bago City College</span> · Graduated <span className="text-primary font-medium">Cum Laude</span>, 2025
             </p>
           </div>
-          <div className="mt-6 rounded-2xl border border-border bg-card p-8">
-            <h3 className="text-xl">Tools &amp; Technologies</h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {[
-                "Canva", "CapCut", "Adobe Express",
-                "Meta Business Suite", "Buffer", "Facebook Pages",
-                "Google Workspace (Docs, Sheets, Drive, Gmail)",
-                "Microsoft Office (Word, Excel, PowerPoint)",
-                "Chat Support Platforms & Customer Service Tools",
-                "Social Media Management & Content Scheduling Tools",
-                "AI Tools (ChatGPT, Claude, Gemini)",
-                "File Management & Cloud Storage Systems",
-                "Administrative Support & Data Entry Applications",
-              ].map((tool) => (
-                <span key={tool} className="rounded-full border border-primary/40 bg-background px-4 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10">
-                  {tool}
-                </span>
-              ))}
+        </div>
+      </section>
+
+      {/* Tools & Tech Stack */}
+      <section id="tools" className="border-b border-border bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Tool Stack</p>
             </div>
+            <div className="mt-3 h-px w-12 bg-primary" />
+            <h2 className="mt-6 font-display text-4xl md:text-5xl">
+              Tools &amp; <span className="text-gradient">Tech Stack</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              The platforms and tools I use daily to deliver reliable virtual assistance, social media management, and chat support.
+            </p>
           </div>
+
+          {[
+            {
+              category: "Design & Content Creation",
+              items: [
+                { name: "Canva", icon: Palette },
+                { name: "CapCut", icon: Scissors },
+                { name: "Adobe Express", icon: Sparkles },
+              ],
+            },
+            {
+              category: "Social Media Management",
+              items: [
+                { name: "Meta Business Suite", icon: Facebook },
+                { name: "Buffer", icon: Calendar },
+                { name: "Facebook Pages", icon: Facebook },
+                { name: "Pinterest", icon: ImageIcon },
+                { name: "PinClicks", icon: MousePointerClick },
+              ],
+            },
+            {
+              category: "Communication & Chat Support",
+              items: [
+                { name: "WhatsApp", icon: MessageCircle },
+                { name: "Gmail", icon: Mail },
+                { name: "Chat Support Platforms", icon: Headphones },
+              ],
+            },
+            {
+              category: "Productivity & Office",
+              items: [
+                { name: "Google Workspace", icon: FileText },
+                { name: "Microsoft Office", icon: FileText },
+                { name: "Notion", icon: BookOpen },
+              ],
+            },
+            {
+              category: "AI Tools",
+              items: [
+                { name: "ChatGPT", icon: Bot },
+                { name: "Claude", icon: Bot },
+                { name: "Gemini", icon: Sparkles },
+                { name: "Lovable", icon: Heart },
+              ],
+            },
+            {
+              category: "Utilities & Operations",
+              items: [
+                { name: "Go Login", icon: KeyRound },
+                { name: "File Management", icon: FolderOpen },
+                { name: "Administrative Support", icon: ClipboardList },
+              ],
+            },
+          ].map((group, gi) => (
+            <Reveal key={group.category} delay={gi * 80} className="mt-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">{group.category}</p>
+              <div className="mt-5 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                {group.items.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft"
+                  >
+                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110">
+                      <item.icon className="h-6 w-6" />
+                    </div>
+                    <span className="text-sm font-medium">{item.name}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -278,9 +350,11 @@ function Portfolio() {
           <h2 className="mt-3 text-4xl md:text-5xl">Selected projects &amp; highlights</h2>
           <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {works.map((w, i) => (
-            <Reveal key={w.title} delay={i * 100} className={i === 4 ? "lg:col-start-2" : ""}>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+          {works.map((w, i) => {
+            const start = i === 3 ? "lg:col-start-2" : i === 4 ? "lg:col-start-4" : "";
+            return (
+            <Reveal key={w.title} delay={i * 100} className={`lg:col-span-2 ${start}`}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
                 <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/80 via-primary to-primary/60 flex items-center justify-center">
                   <span className="font-display text-7xl font-bold text-background/90 transition-transform duration-500 group-hover:scale-110">
@@ -294,7 +368,8 @@ function Portfolio() {
                 </div>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -304,9 +379,11 @@ function Portfolio() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 90} className={i === 4 ? "lg:col-start-2" : ""}>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+            {testimonials.map((t, i) => {
+              const start = i === 3 ? "lg:col-start-2" : i === 4 ? "lg:col-start-4" : "";
+              return (
+              <Reveal key={t.name} delay={i * 90} className={`lg:col-span-2 ${start}`}>
                 <figure className="h-full rounded-2xl border border-border bg-card p-8 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
                   <Quote className="h-7 w-7 text-primary" />
                   <blockquote className="mt-4 text-foreground leading-relaxed">"{t.quote}"</blockquote>
@@ -316,7 +393,8 @@ function Portfolio() {
                   </figcaption>
                 </figure>
               </Reveal>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
