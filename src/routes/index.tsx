@@ -23,10 +23,10 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: ClipboardList, title: "General Virtual Assistance", desc: "Administrative support, calendar and inbox management, data entry, and day-to-day operational help." },
-  { icon: Megaphone, title: "Social Media Management", desc: "Content planning, scheduling, community engagement across Meta, Instagram, and TikTok." },
-  { icon: Palette, title: "Canva Content Design", desc: "On-brand graphics for social posts, promos, and digital marketing campaigns." },
-  { icon: MessageCircle, title: "Multilingual Chat Support", desc: "Timely, professional customer responses in English and Filipino across chat platforms." },
+  { icon: Briefcase, title: "General Virtual Assistance", desc: "Administrative support, file organization, data entry, scheduling, and day-to-day task management to keep your business running smoothly." },
+  { icon: Share2, title: "Social Media Management", desc: "Content creation, scheduling, audience engagement, and performance monitoring across Facebook, Instagram, and more." },
+  { icon: MessageCircle, title: "Chat Support", desc: "Multilingual customer chat support — order tracking, product inquiries, payment concerns, and account assistance." },
+  { icon: Inbox, title: "Email & Inbox Management", desc: "Manage emails, organize inboxes, respond to customer inquiries, schedule follow ups, and maintain clear communication to keep daily operations running efficiently." },
 ];
 
 const experience = [
