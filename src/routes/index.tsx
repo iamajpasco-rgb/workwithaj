@@ -135,21 +135,17 @@ function Portfolio() {
       </header>
 
       {/* Hero */}
-      <section className="relative bg-gradient-warm border-b border-border">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-stretch gap-0 px-0 md:grid-cols-5">
-          <div className="md:col-span-3 bg-card px-8 py-16 md:px-14 md:py-24 flex flex-col justify-center">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Hi there!
+      <section className="relative bg-background border-b border-border overflow-hidden">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 md:py-28 md:grid-cols-2">
+          <div>
+            <div className="h-px w-12 bg-primary" />
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              Chat Support Operations & Social Media Management Operations
             </p>
-            <h1 className="mt-3 text-5xl leading-[1.05] md:text-7xl">
-              I'm <span className="text-gradient">AJ Pasco</span>
+            <h1 className="mt-5 font-display text-5xl leading-[1.05] md:text-7xl">
+              AJ <span className="text-gradient">Pasco</span>
             </h1>
-            <div className="mt-5 inline-block self-start rounded-sm bg-primary px-4 py-1.5">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground">
-                Chat Support Operations & Social Media Management Operations
-              </span>
-            </div>
-            <p className="mt-7 max-w-lg text-base text-muted-foreground leading-relaxed">
+            <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
               Detail-oriented general VA, social media manager, and multilingual chat support helping small businesses stay organized and grow online.
             </p>
             <div className="mt-7 flex flex-wrap gap-2.5">
@@ -163,32 +159,36 @@ function Portfolio() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
-                More about me <ArrowRight className="h-4 w-4" />
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95">
+                Book a Discovery Call
               </a>
-              <a href="#experience" className="inline-flex items-center rounded-full border border-border bg-card px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95">
-                View my experience
+              <a href="#experience" className="inline-flex items-center rounded-md border border-border bg-card px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-accent hover:scale-105 active:scale-95">
+                View My Experience
               </a>
             </div>
           </div>
-          <div className="md:col-span-2 relative min-h-[360px] md:min-h-[560px]">
-            <img
-              src={heroAsset.url}
-              alt="AJ Pasco portrait"
-              width={1024}
-              height={1024}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+          <div className="relative flex justify-center md:justify-end">
+            <div className="absolute inset-0 bg-primary/15 blur-3xl rounded-full" aria-hidden />
+            <div className="relative aspect-square w-72 sm:w-80 md:w-[420px] overflow-hidden rounded-full ring-2 ring-primary/60 ring-offset-4 ring-offset-background shadow-soft">
+              <img
+                src={heroAsset.url}
+                alt="AJ Pasco portrait"
+                width={1024}
+                height={1024}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
         <a
           href="#services"
-          className="flex flex-col items-center gap-2 py-8 text-xs uppercase tracking-[0.25em] text-muted-foreground transition hover:text-primary"
+          className="flex flex-col items-center gap-2 pb-8 text-xs uppercase tracking-[0.25em] text-muted-foreground transition hover:text-primary"
         >
           <span>Scroll and get to know me</span>
           <ChevronDown className="h-4 w-4 animate-bounce" />
         </a>
       </section>
+
 
 
       {/* Services */}
