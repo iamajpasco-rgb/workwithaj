@@ -6,8 +6,8 @@ import work3Asset from "@/assets/work-canva.png.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
-  Mail, Phone, MapPin, ArrowRight, MessageCircle, Megaphone,
-  Palette, ClipboardList, Quote, Linkedin, Send, ChevronDown,
+  Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
+  Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
