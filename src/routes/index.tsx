@@ -360,12 +360,14 @@ function Portfolio() {
                     key={item.name}
                     className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft"
                   >
-                    <div className="grid h-14 w-14 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110">
-                      {"brand" in item && item.brand ? (
+                    <div className="grid h-14 w-14 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110 overflow-hidden">
+                      {"logo" in item && item.logo ? (
+                        <img src={item.logo} alt={item.name} className="h-10 w-10 object-contain" loading="lazy" />
+                      ) : "brand" in item && item.brand ? (
                         <BrandIcon slug={item.brand} alt={item.name} />
-                      ) : (
-                        item.icon && <item.icon className="h-6 w-6" />
-                      )}
+                      ) : "icon" in item && item.icon ? (
+                        <item.icon className="h-6 w-6" />
+                      ) : null}
                     </div>
                     <span className="text-sm font-medium">{item.name}</span>
                   </div>
