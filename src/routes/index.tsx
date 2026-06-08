@@ -305,8 +305,8 @@ function Portfolio() {
             {
               category: "Design & Content Creation",
               items: [
-                { name: "Canva", brand: "canva" },
-                { name: "CapCut", brand: "capcut" },
+                { name: "Canva", logo: logoCanva.url },
+                { name: "CapCut", logo: logoCapcut.url },
               ],
             },
             {
@@ -329,24 +329,24 @@ function Portfolio() {
             {
               category: "Productivity & Office",
               items: [
-                { name: "Google Workspace", brand: "googleworkspace" },
-                { name: "Microsoft Office", brand: "microsoftoffice" },
+                { name: "Google Workspace", logo: logoGoogleWs.url },
+                { name: "Microsoft Office", logo: logoMsOffice.url },
                 { name: "Notion", brand: "notion" },
               ],
             },
             {
               category: "AI Tools",
               items: [
-                { name: "ChatGPT", brand: "openai" },
+                { name: "ChatGPT", logo: logoChatgpt.url },
                 { name: "Claude", brand: "claude" },
                 { name: "Gemini", brand: "googlegemini" },
-                { name: "Lovable", brand: "lovable" },
+                { name: "Lovable", logo: logoLovable.url },
               ],
             },
             {
               category: "Utilities & Operations",
               items: [
-                { name: "Go Login", icon: KeyRound },
+                { name: "Go Login", logo: logoGoLogin.url },
                 { name: "File Management", icon: FolderOpen },
                 { name: "Administrative Support", icon: ClipboardList },
               ],
