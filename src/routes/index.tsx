@@ -6,6 +6,13 @@ import workChatAsset from "@/assets/work-chat.png.asset.json";
 import workDesignAsset from "@/assets/work-design.jpg.asset.json";
 import workSchedulingAsset from "@/assets/work-scheduling.png.asset.json";
 import workVaAsset from "@/assets/work-va.jpg.asset.json";
+import logoCapcut from "@/assets/logo-capcut.png.asset.json";
+import logoCanva from "@/assets/logo-canva.jpg.asset.json";
+import logoMsOffice from "@/assets/logo-msoffice.jpg.asset.json";
+import logoChatgpt from "@/assets/logo-chatgpt.png.asset.json";
+import logoGoLogin from "@/assets/logo-gologin.jpg.asset.json";
+import logoGoogleWs from "@/assets/logo-google-workspace.png.asset.json";
+import logoLovable from "@/assets/logo-lovable.jpg.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
