@@ -382,10 +382,13 @@ function Portfolio() {
             return (
             <Reveal key={w.title} delay={i * 100} className={`lg:col-span-2 ${start}`}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
-                <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/80 via-primary to-primary/60 flex items-center justify-center">
-                  <span className="font-display text-7xl font-bold text-background/90 transition-transform duration-500 group-hover:scale-110">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
+                  <img
+                    src={workImages[i]}
+                    alt={w.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-6">
                   <span className="inline-block rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-foreground">{w.tag}</span>
