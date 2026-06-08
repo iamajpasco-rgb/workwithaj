@@ -89,26 +89,28 @@ const works = [
 
 const testimonials = [
   {
-    quote: "AJ has been an absolute game-changer for our social channels. She brought structure to our calendar, kept content consistent for months, and engaged with our community in a voice that felt authentically ours. Our reach and saves grew steadily under her care.",
+    quote: "AJ has been an absolute game-changer for our social channels. He brought structure to our calendar, kept content consistent for months, and engaged with our community in a voice that felt authentically ours. Our reach and saves grew steadily under his care.",
     name: "Maria L.", role: "Doventra Productions",
   },
   {
-    quote: "Reliable, fast, and incredibly detail-oriented. AJ handled multilingual chat under high volume without losing her warmth — customers consistently mentioned how helpful she was. She also flagged recurring issues that helped us fix product friction.",
+    quote: "Reliable, fast, and incredibly detail-oriented. AJ handled multilingual chat under high volume without losing his warmth — customers consistently mentioned how helpful he was. He also flagged recurring issues that helped us fix product friction.",
     name: "Ken T.", role: "Nick Ecommerce",
   },
   {
-    quote: "Her Canva work is consistently on-brand, clean, and quick to turn around. AJ asks the right questions upfront and rarely needs more than one round of revisions. She has become our go-to for promotional graphics and campaign assets.",
+    quote: "His Canva work is consistently on-brand, clean, and quick to turn around. AJ asks the right questions upfront and rarely needs more than one round of revisions. He has become our go-to for promotional graphics and campaign assets.",
     name: "Jamie R.", role: "ITalk Philippines",
   },
   {
-    quote: "What I appreciate most about AJ is her ownership. She doesn't wait to be told — she organizes, follows up, and brings small improvements to every workflow she touches. Working with her feels like having a real teammate, not just a contractor.",
+    quote: "What I appreciate most about AJ is his ownership. He doesn't wait to be told — he organizes, follows up, and brings small improvements to every workflow he touches. Working with him feels like having a real teammate, not just a contractor.",
     name: "Patricia M.", role: "Independent Client",
   },
   {
-    quote: "AJ supported our launch week and kept everything from inbox triage to social replies running smoothly. She's calm under pressure, communicates clearly, and genuinely cares about doing great work. I'd hire her again in a heartbeat.",
+    quote: "AJ supported our launch week and kept everything from inbox triage to social replies running smoothly. He's calm under pressure, communicates clearly, and genuinely cares about doing great work. I'd hire him again in a heartbeat.",
     name: "Daniel C.", role: "E-commerce Founder",
   },
 ];
+
+const workImages = [workSmmAsset.url, workChatAsset.url, workDesignAsset.url, workSchedulingAsset.url, workVaAsset.url];
 
 function Logo() {
   return (
