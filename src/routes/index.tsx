@@ -451,22 +451,54 @@ function Portfolio() {
               <li className="flex items-center gap-3"><Linkedin className="h-5 w-5 text-primary" /><a href="https://www.onlinejobs.ph/jobseekers/info/3298570" target="_blank" rel="noreferrer" className="hover:text-primary">OnlineJobs.ph profile</a></li>
             </ul>
           </div>
-          <form onSubmit={(e) => { e.preventDefault(); window.location.href = "mailto:pascoaianjoi@gmail.com"; }} className="rounded-2xl border border-border bg-card p-8 shadow-card space-y-4">
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+              const status = form.querySelector<HTMLParagraphElement>('[data-form-status]');
+              const fd = new FormData(form);
+              if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
+              try {
+                const res = await fetch("https://formsubmit.co/ajax/pascoaianjoi@gmail.com", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json", Accept: "application/json" },
+                  body: JSON.stringify({
+                    name: fd.get("name"),
+                    email: fd.get("email"),
+                    message: fd.get("message"),
+                    _subject: `New message from ${fd.get("name")} — Portfolio contact`,
+                    _template: "table",
+                    _captcha: "false",
+                  }),
+                });
+                if (!res.ok) throw new Error("send failed");
+                if (status) { status.textContent = "Thanks! Your message was sent."; status.className = "text-sm text-primary"; }
+                form.reset();
+              } catch {
+                if (status) { status.textContent = "Could not send. Please email pascoaianjoi@gmail.com directly."; status.className = "text-sm text-destructive"; }
+              } finally {
+                if (btn) { btn.disabled = false; btn.innerHTML = ""; btn.append("Send message"); }
+              }
+            }}
+            className="rounded-2xl border border-border bg-card p-8 shadow-card space-y-4"
+          >
             <div>
               <label className="text-sm font-medium">Your name</label>
-              <input required className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Jane Doe" />
+              <input name="name" required className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Jane Doe" />
             </div>
             <div>
               <label className="text-sm font-medium">Email</label>
-              <input required type="email" className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="jane@company.com" />
+              <input name="email" required type="email" className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="jane@company.com" />
             </div>
             <div>
               <label className="text-sm font-medium">How can I help?</label>
-              <textarea required rows={4} className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Tell me a bit about your project..." />
+              <textarea name="message" required rows={4} className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring" placeholder="Tell me a bit about your project..." />
             </div>
             <button type="submit" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 transition">
               Send message <Send className="h-4 w-4" />
             </button>
+            <p data-form-status className="text-sm text-muted-foreground" />
           </form>
         </div>
       </section>
