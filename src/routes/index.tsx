@@ -1,14 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroAsset from "@/assets/aj-portrait.jpg.asset.json";
+import servicesAsset from "@/assets/aj-services.png.asset.json";
+import workSmmAsset from "@/assets/work-smm.png.asset.json";
+import workChatAsset from "@/assets/work-chat.png.asset.json";
+import workDesignAsset from "@/assets/work-design.jpg.asset.json";
+import workSchedulingAsset from "@/assets/work-scheduling.png.asset.json";
+import workVaAsset from "@/assets/work-va.jpg.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
   Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
-  Palette, Scissors, Sparkles, Facebook, Calendar, Image as ImageIcon,
-  MousePointerClick, FileText, BookOpen, Headphones, Bot, Heart,
-  KeyRound, FolderOpen, ClipboardList,
+  Headphones, Bot, KeyRound, FolderOpen, ClipboardList,
 } from "lucide-react";
+
+const BrandIcon = ({ slug, alt }: { slug: string; alt: string }) => (
+  <img src={`https://cdn.simpleicons.org/${slug}`} alt={alt} className="h-7 w-7" loading="lazy" />
+);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -81,26 +89,28 @@ const works = [
 
 const testimonials = [
   {
-    quote: "AJ has been an absolute game-changer for our social channels. She brought structure to our calendar, kept content consistent for months, and engaged with our community in a voice that felt authentically ours. Our reach and saves grew steadily under her care.",
+    quote: "AJ has been an absolute game-changer for our social channels. He brought structure to our calendar, kept content consistent for months, and engaged with our community in a voice that felt authentically ours. Our reach and saves grew steadily under his care.",
     name: "Maria L.", role: "Doventra Productions",
   },
   {
-    quote: "Reliable, fast, and incredibly detail-oriented. AJ handled multilingual chat under high volume without losing her warmth — customers consistently mentioned how helpful she was. She also flagged recurring issues that helped us fix product friction.",
+    quote: "Reliable, fast, and incredibly detail-oriented. AJ handled multilingual chat under high volume without losing his warmth — customers consistently mentioned how helpful he was. He also flagged recurring issues that helped us fix product friction.",
     name: "Ken T.", role: "Nick Ecommerce",
   },
   {
-    quote: "Her Canva work is consistently on-brand, clean, and quick to turn around. AJ asks the right questions upfront and rarely needs more than one round of revisions. She has become our go-to for promotional graphics and campaign assets.",
+    quote: "His Canva work is consistently on-brand, clean, and quick to turn around. AJ asks the right questions upfront and rarely needs more than one round of revisions. He has become our go-to for promotional graphics and campaign assets.",
     name: "Jamie R.", role: "ITalk Philippines",
   },
   {
-    quote: "What I appreciate most about AJ is her ownership. She doesn't wait to be told — she organizes, follows up, and brings small improvements to every workflow she touches. Working with her feels like having a real teammate, not just a contractor.",
+    quote: "What I appreciate most about AJ is his ownership. He doesn't wait to be told — he organizes, follows up, and brings small improvements to every workflow he touches. Working with him feels like having a real teammate, not just a contractor.",
     name: "Patricia M.", role: "Independent Client",
   },
   {
-    quote: "AJ supported our launch week and kept everything from inbox triage to social replies running smoothly. She's calm under pressure, communicates clearly, and genuinely cares about doing great work. I'd hire her again in a heartbeat.",
+    quote: "AJ supported our launch week and kept everything from inbox triage to social replies running smoothly. He's calm under pressure, communicates clearly, and genuinely cares about doing great work. I'd hire him again in a heartbeat.",
     name: "Daniel C.", role: "E-commerce Founder",
   },
 ];
+
+const workImages = [workSmmAsset.url, workChatAsset.url, workDesignAsset.url, workSchedulingAsset.url, workVaAsset.url];
 
 function Logo() {
   return (
@@ -198,18 +208,32 @@ function Portfolio() {
           <h2 className="mt-3 text-4xl md:text-5xl">What I can do for you</h2>
           <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s, i) => (
-            <Reveal key={s.title} delay={i * 80}>
-              <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30 cursor-pointer active:scale-95">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                  <s.icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 text-xl">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
+          <Reveal>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-3xl" aria-hidden />
+              <div className="relative overflow-hidden rounded-3xl border border-border shadow-soft">
+                <img
+                  src={servicesAsset.url}
+                  alt="AJ Pasco"
+                  className="h-full w-full object-cover aspect-[4/5]"
+                />
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {services.map((s, i) => (
+              <Reveal key={s.title} delay={i * 80}>
+                <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30 cursor-pointer active:scale-95">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <s.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-xl">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -274,44 +298,42 @@ function Portfolio() {
             {
               category: "Design & Content Creation",
               items: [
-                { name: "Canva", icon: Palette },
-                { name: "CapCut", icon: Scissors },
-                { name: "Adobe Express", icon: Sparkles },
+                { name: "Canva", brand: "canva" },
+                { name: "CapCut", brand: "capcut" },
               ],
             },
             {
               category: "Social Media Management",
               items: [
-                { name: "Meta Business Suite", icon: Facebook },
-                { name: "Buffer", icon: Calendar },
-                { name: "Facebook Pages", icon: Facebook },
-                { name: "Pinterest", icon: ImageIcon },
-                { name: "PinClicks", icon: MousePointerClick },
+                { name: "Meta Business Suite", brand: "meta" },
+                { name: "Buffer", brand: "buffer" },
+                { name: "Facebook Pages", brand: "facebook" },
+                { name: "Pinterest", brand: "pinterest" },
               ],
             },
             {
               category: "Communication & Chat Support",
               items: [
-                { name: "WhatsApp", icon: MessageCircle },
-                { name: "Gmail", icon: Mail },
+                { name: "WhatsApp", brand: "whatsapp" },
+                { name: "Gmail", brand: "gmail" },
                 { name: "Chat Support Platforms", icon: Headphones },
               ],
             },
             {
               category: "Productivity & Office",
               items: [
-                { name: "Google Workspace", icon: FileText },
-                { name: "Microsoft Office", icon: FileText },
-                { name: "Notion", icon: BookOpen },
+                { name: "Google Workspace", brand: "googleworkspace" },
+                { name: "Microsoft Office", brand: "microsoftoffice" },
+                { name: "Notion", brand: "notion" },
               ],
             },
             {
               category: "AI Tools",
               items: [
-                { name: "ChatGPT", icon: Bot },
-                { name: "Claude", icon: Bot },
-                { name: "Gemini", icon: Sparkles },
-                { name: "Lovable", icon: Heart },
+                { name: "ChatGPT", brand: "openai" },
+                { name: "Claude", brand: "claude" },
+                { name: "Gemini", brand: "googlegemini" },
+                { name: "Lovable", brand: "lovable" },
               ],
             },
             {
@@ -331,8 +353,12 @@ function Portfolio() {
                     key={item.name}
                     className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft"
                   >
-                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110">
-                      <item.icon className="h-6 w-6" />
+                    <div className="grid h-14 w-14 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110">
+                      {"brand" in item && item.brand ? (
+                        <BrandIcon slug={item.brand} alt={item.name} />
+                      ) : (
+                        item.icon && <item.icon className="h-6 w-6" />
+                      )}
                     </div>
                     <span className="text-sm font-medium">{item.name}</span>
                   </div>
@@ -356,10 +382,13 @@ function Portfolio() {
             return (
             <Reveal key={w.title} delay={i * 100} className={`lg:col-span-2 ${start}`}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
-                <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-primary/80 via-primary to-primary/60 flex items-center justify-center">
-                  <span className="font-display text-7xl font-bold text-background/90 transition-transform duration-500 group-hover:scale-110">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
+                  <img
+                    src={workImages[i]}
+                    alt={w.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-6">
                   <span className="inline-block rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-foreground">{w.tag}</span>
