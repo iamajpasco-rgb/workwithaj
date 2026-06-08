@@ -6,6 +6,13 @@ import workChatAsset from "@/assets/work-chat.png.asset.json";
 import workDesignAsset from "@/assets/work-design.jpg.asset.json";
 import workSchedulingAsset from "@/assets/work-scheduling.png.asset.json";
 import workVaAsset from "@/assets/work-va.jpg.asset.json";
+import logoCapcut from "@/assets/logo-capcut.png.asset.json";
+import logoCanva from "@/assets/logo-canva.jpg.asset.json";
+import logoMsOffice from "@/assets/logo-msoffice.jpg.asset.json";
+import logoChatgpt from "@/assets/logo-chatgpt.png.asset.json";
+import logoGoLogin from "@/assets/logo-gologin.jpg.asset.json";
+import logoGoogleWs from "@/assets/logo-google-workspace.png.asset.json";
+import logoLovable from "@/assets/logo-lovable.jpg.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -298,8 +305,8 @@ function Portfolio() {
             {
               category: "Design & Content Creation",
               items: [
-                { name: "Canva", brand: "canva" },
-                { name: "CapCut", brand: "capcut" },
+                { name: "Canva", logo: logoCanva.url },
+                { name: "CapCut", logo: logoCapcut.url },
               ],
             },
             {
@@ -322,24 +329,24 @@ function Portfolio() {
             {
               category: "Productivity & Office",
               items: [
-                { name: "Google Workspace", brand: "googleworkspace" },
-                { name: "Microsoft Office", brand: "microsoftoffice" },
+                { name: "Google Workspace", logo: logoGoogleWs.url },
+                { name: "Microsoft Office", logo: logoMsOffice.url },
                 { name: "Notion", brand: "notion" },
               ],
             },
             {
               category: "AI Tools",
               items: [
-                { name: "ChatGPT", brand: "openai" },
+                { name: "ChatGPT", logo: logoChatgpt.url },
                 { name: "Claude", brand: "claude" },
                 { name: "Gemini", brand: "googlegemini" },
-                { name: "Lovable", brand: "lovable" },
+                { name: "Lovable", logo: logoLovable.url },
               ],
             },
             {
               category: "Utilities & Operations",
               items: [
-                { name: "Go Login", icon: KeyRound },
+                { name: "Go Login", logo: logoGoLogin.url },
                 { name: "File Management", icon: FolderOpen },
                 { name: "Administrative Support", icon: ClipboardList },
               ],
@@ -353,12 +360,14 @@ function Portfolio() {
                     key={item.name}
                     className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft"
                   >
-                    <div className="grid h-14 w-14 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110">
-                      {"brand" in item && item.brand ? (
+                    <div className="grid h-14 w-14 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110 overflow-hidden">
+                      {"logo" in item && item.logo ? (
+                        <img src={item.logo} alt={item.name} className="h-10 w-10 object-contain" loading="lazy" />
+                      ) : "brand" in item && item.brand ? (
                         <BrandIcon slug={item.brand} alt={item.name} />
-                      ) : (
-                        item.icon && <item.icon className="h-6 w-6" />
-                      )}
+                      ) : "icon" in item && item.icon ? (
+                        <item.icon className="h-6 w-6" />
+                      ) : null}
                     </div>
                     <span className="text-sm font-medium">{item.name}</span>
                   </div>
