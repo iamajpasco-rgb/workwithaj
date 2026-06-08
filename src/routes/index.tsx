@@ -298,44 +298,42 @@ function Portfolio() {
             {
               category: "Design & Content Creation",
               items: [
-                { name: "Canva", icon: Palette },
-                { name: "CapCut", icon: Scissors },
-                { name: "Adobe Express", icon: Sparkles },
+                { name: "Canva", brand: "canva" },
+                { name: "CapCut", brand: "capcut" },
               ],
             },
             {
               category: "Social Media Management",
               items: [
-                { name: "Meta Business Suite", icon: Facebook },
-                { name: "Buffer", icon: Calendar },
-                { name: "Facebook Pages", icon: Facebook },
-                { name: "Pinterest", icon: ImageIcon },
-                { name: "PinClicks", icon: MousePointerClick },
+                { name: "Meta Business Suite", brand: "meta" },
+                { name: "Buffer", brand: "buffer" },
+                { name: "Facebook Pages", brand: "facebook" },
+                { name: "Pinterest", brand: "pinterest" },
               ],
             },
             {
               category: "Communication & Chat Support",
               items: [
-                { name: "WhatsApp", icon: MessageCircle },
-                { name: "Gmail", icon: Mail },
+                { name: "WhatsApp", brand: "whatsapp" },
+                { name: "Gmail", brand: "gmail" },
                 { name: "Chat Support Platforms", icon: Headphones },
               ],
             },
             {
               category: "Productivity & Office",
               items: [
-                { name: "Google Workspace", icon: FileText },
-                { name: "Microsoft Office", icon: FileText },
-                { name: "Notion", icon: BookOpen },
+                { name: "Google Workspace", brand: "googleworkspace" },
+                { name: "Microsoft Office", brand: "microsoftoffice" },
+                { name: "Notion", brand: "notion" },
               ],
             },
             {
               category: "AI Tools",
               items: [
-                { name: "ChatGPT", icon: Bot },
-                { name: "Claude", icon: Bot },
-                { name: "Gemini", icon: Sparkles },
-                { name: "Lovable", icon: Heart },
+                { name: "ChatGPT", brand: "openai" },
+                { name: "Claude", brand: "claude" },
+                { name: "Gemini", brand: "googlegemini" },
+                { name: "Lovable", brand: "lovable" },
               ],
             },
             {
@@ -355,8 +353,12 @@ function Portfolio() {
                     key={item.name}
                     className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft"
                   >
-                    <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110">
-                      <item.icon className="h-6 w-6" />
+                    <div className="grid h-14 w-14 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110">
+                      {"brand" in item && item.brand ? (
+                        <BrandIcon slug={item.brand} alt={item.name} />
+                      ) : (
+                        item.icon && <item.icon className="h-6 w-6" />
+                      )}
                     </div>
                     <span className="text-sm font-medium">{item.name}</span>
                   </div>
