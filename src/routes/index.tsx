@@ -208,18 +208,32 @@ function Portfolio() {
           <h2 className="mt-3 text-4xl md:text-5xl">What I can do for you</h2>
           <div className="mx-auto mt-4 h-0.5 w-16 bg-primary/60 rounded-full" />
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s, i) => (
-            <Reveal key={s.title} delay={i * 80}>
-              <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30 cursor-pointer active:scale-95">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-                  <s.icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 text-xl">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
+          <Reveal>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-3xl" aria-hidden />
+              <div className="relative overflow-hidden rounded-3xl border border-border shadow-soft">
+                <img
+                  src={servicesAsset.url}
+                  alt="AJ Pasco"
+                  className="h-full w-full object-cover aspect-[4/5]"
+                />
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {services.map((s, i) => (
+              <Reveal key={s.title} delay={i * 80}>
+                <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30 cursor-pointer active:scale-95">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <s.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-xl">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
