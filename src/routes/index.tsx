@@ -1,14 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroAsset from "@/assets/aj-portrait.jpg.asset.json";
+import servicesAsset from "@/assets/aj-services.png.asset.json";
+import workSmmAsset from "@/assets/work-smm.png.asset.json";
+import workChatAsset from "@/assets/work-chat.png.asset.json";
+import workDesignAsset from "@/assets/work-design.jpg.asset.json";
+import workSchedulingAsset from "@/assets/work-scheduling.png.asset.json";
+import workVaAsset from "@/assets/work-va.jpg.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
   Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
-  Palette, Scissors, Sparkles, Facebook, Calendar, Image as ImageIcon,
-  MousePointerClick, FileText, BookOpen, Headphones, Bot, Heart,
-  KeyRound, FolderOpen, ClipboardList,
+  Headphones, Bot, KeyRound, FolderOpen, ClipboardList,
 } from "lucide-react";
+
+const BrandIcon = ({ slug, alt }: { slug: string; alt: string }) => (
+  <img src={`https://cdn.simpleicons.org/${slug}`} alt={alt} className="h-7 w-7" loading="lazy" />
+);
 
 export const Route = createFileRoute("/")({
   head: () => ({
