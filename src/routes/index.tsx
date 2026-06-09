@@ -392,7 +392,7 @@ function Portfolio() {
             return (
             <Reveal key={w.title} delay={i * 100} className={`lg:col-span-2 ${start}`}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
-                <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
+                <div className="relative aspect-[16/10] overflow-hidden bg-secondary border-4 border-primary/60">
                   <img
                     src={workImages[i]}
                     alt={w.title}
