@@ -164,7 +164,7 @@ function Portfolio() {
               AJ <span className="text-gradient">Pasco</span>
             </h1>
             <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
-              Detail-oriented general VA, social media manager, and multilingual chat support helping small businesses stay organized and grow online.
+              Helping businesses save time, stay organized, and grow through virtual assistance, social media management, and customer support.
             </p>
             <div className="mt-7 flex flex-wrap gap-2.5">
               {["General VA", "Social Media", "Canva Design", "Chat Support"].map((tag) => (
