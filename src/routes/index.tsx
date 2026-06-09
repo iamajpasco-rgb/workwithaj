@@ -18,7 +18,7 @@ import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
   Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
-  Headphones, FolderOpen, ClipboardList,
+  Headphones, FolderOpen, ClipboardList, Bot,
   Search, Lightbulb, Rocket, BarChart3, TrendingUp,
 } from "lucide-react";
 
