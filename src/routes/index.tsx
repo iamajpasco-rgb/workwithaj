@@ -6,19 +6,20 @@ import workChatAsset from "@/assets/work-chat.png.asset.json";
 import workDesignAsset from "@/assets/work-design.jpg.asset.json";
 import workSchedulingAsset from "@/assets/work-scheduling.png.asset.json";
 import workVaAsset from "@/assets/work-va.jpg.asset.json";
-import logoCapcut from "@/assets/logo-capcut.png.asset.json";
-import logoCanva from "@/assets/logo-canva.jpg.asset.json";
-import logoMsOffice from "@/assets/logo-msoffice.jpg.asset.json";
-import logoChatgpt from "@/assets/logo-chatgpt.png.asset.json";
-import logoGoLogin from "@/assets/logo-gologin.jpg.asset.json";
+import logoCapcut from "@/assets/logo-capcut-new.png.asset.json";
+import logoCanva from "@/assets/logo-canva-new.png.asset.json";
+import logoMsOffice from "@/assets/logo-msoffice-new.png.asset.json";
+import logoChatgpt from "@/assets/logo-chatgpt-new.png.asset.json";
+import logoGoLogin from "@/assets/logo-gologin-new.png.asset.json";
 import logoGoogleWs from "@/assets/logo-google-workspace.png.asset.json";
-import logoLovable from "@/assets/logo-lovable.jpg.asset.json";
+import logoLovable from "@/assets/logo-lovable-new.png.asset.json";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Reveal } from "@/components/Reveal";
 import {
   Mail, Phone, MapPin, ArrowRight, MessageCircle, Share2,
   Briefcase, Inbox, Quote, Linkedin, Send, ChevronDown,
-  Headphones, Bot, KeyRound, FolderOpen, ClipboardList,
+  Headphones, FolderOpen, ClipboardList,
+  Search, Lightbulb, Rocket, BarChart3, TrendingUp,
 } from "lucide-react";
 
 const BrandIcon = ({ slug, alt }: { slug: string; alt: string }) => (
@@ -163,7 +164,7 @@ function Portfolio() {
               AJ <span className="text-gradient">Pasco</span>
             </h1>
             <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
-              Detail-oriented general VA, social media manager, and multilingual chat support helping small businesses stay organized and grow online.
+              Helping businesses save time, stay organized, and grow through virtual assistance, social media management, and customer support.
             </p>
             <div className="mt-7 flex flex-wrap gap-2.5">
               {["General VA", "Social Media", "Canva Design", "Chat Support"].map((tag) => (
@@ -219,7 +220,7 @@ function Portfolio() {
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-3xl" aria-hidden />
-              <div className="relative overflow-hidden rounded-3xl border border-border shadow-soft">
+              <div className="relative overflow-hidden rounded-3xl border-4 border-primary/60 shadow-soft">
                 <img
                   src={servicesAsset.url}
                   alt="AJ Pasco"
@@ -391,7 +392,7 @@ function Portfolio() {
             return (
             <Reveal key={w.title} delay={i * 100} className={`lg:col-span-2 ${start}`}>
               <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
-                <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
+                <div className="relative aspect-[16/10] overflow-hidden bg-secondary border-4 border-primary/60">
                   <img
                     src={workImages[i]}
                     alt={w.title}
@@ -412,8 +413,38 @@ function Portfolio() {
       </section>
 
 
+      {/* My Process */}
+      <section id="process" className="border-y border-border bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">My Process</p>
+          <div className="mt-3 h-px w-12 bg-primary" />
+          <h2 className="mt-6 font-display text-4xl md:text-5xl">How I Deliver</h2>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { icon: Search, num: "01", title: "Analyze & Research", desc: "Conduct market research, competitor analysis, and operational audits to identify opportunities for improvement." },
+              { icon: Lightbulb, num: "02", title: "Plan & Prioritize", desc: "Develop structured workflows, content strategies, and administrative systems aligned with business objectives." },
+              { icon: Rocket, num: "03", title: "Execute & Deliver", desc: "Manage content creation, customer support, website updates, and day to day operational tasks efficiently." },
+              { icon: BarChart3, num: "04", title: "Monitor & Improve", desc: "Track performance, organize information, and optimize processes to maintain quality and consistency." },
+              { icon: TrendingUp, num: "05", title: "Automate & Scale", desc: "Utilize ChatGPT, Claude, Gemini, Canva, and digital tools to streamline operations and support sustainable growth." },
+            ].map((step, i) => (
+              <Reveal key={step.num} delay={i * 80}>
+                <div className="h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-soft">
+                  <div className="grid h-10 w-10 place-items-center rounded-lg bg-accent text-primary">
+                    <step.icon className="h-5 w-5" />
+                  </div>
+                  <div className="mt-6 text-sm font-semibold text-primary">{step.num}</div>
+                  <h3 className="mt-2 text-lg font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section id="testimonials" className="bg-gradient-warm border-y border-border">
+
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
