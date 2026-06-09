@@ -187,7 +187,7 @@ function Portfolio() {
           </div>
           <div className="relative flex justify-center md:justify-end">
             <div className="absolute inset-0 bg-primary/15 blur-3xl rounded-full" aria-hidden />
-            <div className="relative aspect-square w-72 sm:w-80 md:w-[420px] overflow-hidden rounded-full ring-2 ring-primary/60 ring-offset-4 ring-offset-background shadow-soft">
+            <div className="relative aspect-square w-72 sm:w-80 md:w-[420px] overflow-hidden rounded-full border-4 border-primary ring-4 ring-primary/30 ring-offset-4 ring-offset-background shadow-soft">
               <img
                 src={heroAsset.url}
                 alt="AJ Pasco portrait"
