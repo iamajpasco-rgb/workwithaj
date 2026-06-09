@@ -442,8 +442,62 @@ function Portfolio() {
         </div>
       </section>
 
+      {/* Track Record */}
+      <section id="track-record" className="border-b border-border bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Track Record</p>
+          <div className="mt-3 h-px w-12 bg-primary" />
+          <h2 className="mt-6 font-display text-4xl md:text-5xl">Performance Highlights</h2>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: Bot, stat: "500+", label: "AI assisted tasks completed" },
+              { icon: Share2, stat: "100+", label: "Content pieces created" },
+              { icon: Briefcase, stat: "50+", label: "Website and digital projects supported" },
+            ].map((s, i) => (
+              <Reveal key={s.label} delay={i * 80}>
+                <div className="h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft">
+                  <div className="flex items-start gap-4">
+                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent text-primary">
+                      <s.icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <div className="font-display text-3xl text-foreground">{s.stat}</div>
+                      <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: Rocket, title: "Optimized", desc: "Business workflows through AI and digital tools" },
+              { icon: Headphones, title: "Delivered", desc: "Reliable virtual assistance and customer support" },
+              { icon: TrendingUp, title: "Enhanced", desc: "Productivity through research, organization, and automation" },
+            ].map((s, i) => (
+              <Reveal key={s.title} delay={i * 80}>
+                <div className="h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft">
+                  <div className="flex items-start gap-4">
+                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent text-primary">
+                      <s.icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <div className="font-display text-2xl text-foreground">{s.title}</div>
+                      <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section id="testimonials" className="bg-gradient-warm border-y border-border">
+
 
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
