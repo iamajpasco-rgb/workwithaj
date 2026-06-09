@@ -413,8 +413,38 @@ function Portfolio() {
       </section>
 
 
+      {/* My Process */}
+      <section id="process" className="border-y border-border bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">My Process</p>
+          <div className="mt-3 h-px w-12 bg-primary" />
+          <h2 className="mt-6 font-display text-4xl md:text-5xl">How I Deliver</h2>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { icon: Search, num: "01", title: "Analyze & Research", desc: "Conduct market research, competitor analysis, and operational audits to identify opportunities for improvement." },
+              { icon: Lightbulb, num: "02", title: "Plan & Prioritize", desc: "Develop structured workflows, content strategies, and administrative systems aligned with business objectives." },
+              { icon: Rocket, num: "03", title: "Execute & Deliver", desc: "Manage content creation, customer support, website updates, and day to day operational tasks efficiently." },
+              { icon: BarChart3, num: "04", title: "Monitor & Improve", desc: "Track performance, organize information, and optimize processes to maintain quality and consistency." },
+              { icon: TrendingUp, num: "05", title: "Automate & Scale", desc: "Utilize ChatGPT, Claude, Gemini, Canva, and digital tools to streamline operations and support sustainable growth." },
+            ].map((step, i) => (
+              <Reveal key={step.num} delay={i * 80}>
+                <div className="h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-soft">
+                  <div className="grid h-10 w-10 place-items-center rounded-lg bg-accent text-primary">
+                    <step.icon className="h-5 w-5" />
+                  </div>
+                  <div className="mt-6 text-sm font-semibold text-primary">{step.num}</div>
+                  <h3 className="mt-2 text-lg font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section id="testimonials" className="bg-gradient-warm border-y border-border">
+
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="text-sm font-medium uppercase tracking-widest text-primary">Testimonials</p>
           <h2 className="mt-3 text-4xl md:text-5xl">Kind words from clients</h2>
