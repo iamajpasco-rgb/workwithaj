@@ -220,7 +220,7 @@ function Portfolio() {
           <Reveal>
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-3xl" aria-hidden />
-              <div className="relative overflow-hidden rounded-3xl border border-border shadow-soft">
+              <div className="relative overflow-hidden rounded-3xl border-4 border-primary/60 shadow-soft">
                 <img
                   src={servicesAsset.url}
                   alt="AJ Pasco"
