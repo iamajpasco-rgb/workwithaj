@@ -186,7 +186,6 @@ function Portfolio() {
             </div>
           </div>
           <div className="relative flex justify-center md:justify-end">
-            <div className="absolute inset-0 bg-primary/15 blur-3xl rounded-full" aria-hidden />
             <div className="relative aspect-square w-72 sm:w-80 md:w-[420px] overflow-hidden rounded-full border-4 border-primary ring-4 ring-primary/30 ring-offset-4 ring-offset-background shadow-soft">
               <img
                 src={heroAsset.url}
@@ -203,7 +202,7 @@ function Portfolio() {
           className="flex flex-col items-center gap-2 pb-8 text-xs uppercase tracking-[0.25em] text-muted-foreground transition hover:text-primary"
         >
           <span>Scroll and get to know me</span>
-          <ChevronDown className="h-4 w-4 animate-bounce" />
+          <ChevronDown className="h-4 w-4" />
         </a>
       </section>
 
@@ -219,7 +218,6 @@ function Portfolio() {
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <div className="relative">
-              <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-3xl" aria-hidden />
               <div className="relative overflow-hidden rounded-3xl border-4 border-primary/60 shadow-soft">
                 <img
                   src={servicesAsset.url}
