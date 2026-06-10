@@ -133,7 +133,7 @@ function Portfolio() {
   return (
     <div id="top" className="min-h-screen bg-background">
       {/* Nav */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/60">
+      <header className="sticky top-0 z-50 bg-background border-b border-border/60">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <Logo />
           <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
