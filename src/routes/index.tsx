@@ -520,6 +520,91 @@ function Portfolio() {
         </div>
       </section>
 
+      {/* Professional Assessments */}
+      <section id="assessments" className="mx-auto max-w-6xl px-6 py-24">
+        <Reveal className="text-center">
+          <p className="text-sm font-medium uppercase tracking-widest text-primary">Credentials</p>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl">Professional Assessments</h2>
+          <p className="mx-auto mt-6 max-w-3xl text-muted-foreground leading-relaxed">
+            To provide additional insight into my capabilities and work style, I have completed several professional assessments that reflect my communication skills, problem solving ability, and approach to work. While assessments offer valuable insights, I believe the quality of my work, consistency, and results are the strongest indicators of the value I bring to every project.
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <Reveal delay={0}>
+            <div className="h-full rounded-2xl border border-border bg-card p-8 shadow-card text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">English Proficiency</p>
+              <div className="mt-6 font-display text-5xl text-foreground">C2</div>
+              <p className="mt-2 text-sm text-muted-foreground">CEFR — Advanced / Mastery</p>
+              <p className="mt-6 text-sm text-muted-foreground leading-relaxed text-left">
+                Demonstrates near native fluency in written and spoken English, with the ability to communicate professionally across a wide range of business environments. This proficiency supports effective client communication, email management, content creation, documentation, research, and administrative support.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="h-full rounded-2xl border border-border bg-card p-8 shadow-card text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">DISC Personality</p>
+              <div className="mt-6 grid grid-cols-4 gap-3">
+                {[
+                  { k: "D", v: 43, label: "Dominance" },
+                  { k: "S", v: 28, label: "Steadiness" },
+                  { k: "C", v: 22, label: "Compliance" },
+                  { k: "I", v: 7, label: "Influence" },
+                ].map((d) => (
+                  <div key={d.k} className="rounded-xl border border-border bg-background p-3">
+                    <div className="font-display text-2xl text-primary">{d.k}</div>
+                    <div className="mt-1 text-sm font-semibold text-foreground">{d.v}%</div>
+                    <div className="mt-1 text-[10px] uppercase tracking-wider text-muted-foreground">{d.label}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-6 text-sm text-muted-foreground leading-relaxed text-left">
+                My DISC results indicate a results driven and dependable work style. I am comfortable taking ownership of tasks, solving problems independently, following established processes, and maintaining high standards of accuracy and quality. I thrive in structured environments where efficiency, accountability, and consistent execution are valued.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={240}>
+            <div className="h-full rounded-2xl border border-border bg-card p-8 shadow-card text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-soft hover:border-primary/30">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Cognitive Assessment</p>
+              <div className="mt-6 font-display text-5xl text-foreground">106</div>
+              <p className="mt-2 text-sm text-muted-foreground">IQ Score</p>
+              <p className="mt-6 text-sm text-muted-foreground leading-relaxed text-left">
+                This score reflects strong analytical thinking, comprehension, and problem solving abilities. It supports my ability to learn new tools quickly, adapt to changing requirements, organize information effectively, and make sound decisions when managing tasks and projects.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal className="mt-16">
+          <div className="mx-auto max-w-4xl rounded-2xl border border-primary/20 bg-gradient-warm p-10 text-center shadow-card">
+            <h3 className="font-display text-2xl md:text-3xl">How These Assessments Support My Work</h3>
+            <p className="mt-4 text-muted-foreground">These assessments align with the qualities I bring to clients every day:</p>
+            <ul className="mx-auto mt-8 grid max-w-2xl gap-3 text-left sm:grid-cols-2">
+              {[
+                "Strong written and verbal communication",
+                "Attention to detail and accuracy",
+                "Critical thinking and problem solving",
+                "Ability to work independently with minimal supervision",
+                "Reliable execution and task ownership",
+                "Commitment to quality and continuous improvement",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-foreground">
+                  <span className="mt-0.5 text-primary">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mx-auto mt-8 max-w-3xl text-sm text-muted-foreground leading-relaxed">
+              I combine these strengths with practical experience in virtual assistance, administrative support, content management, research, and digital operations to help businesses stay organized, productive, and focused on growth.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+
+
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-12 md:grid-cols-2">
