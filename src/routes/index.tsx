@@ -161,7 +161,7 @@ function Portfolio() {
               Chat Support Operations & Social Media Management Operations
             </p>
             <h1 className="mt-5 font-display text-5xl leading-[1.05] md:text-7xl">
-              AJ <span className="text-gradient">Pasco</span>
+              Aian Joi <span className="text-gradient">Pasco</span>
             </h1>
             <p className="mt-6 max-w-lg text-base text-muted-foreground leading-relaxed">
               Helping businesses save time, stay organized, and grow through virtual assistance, social media management, and customer support.
