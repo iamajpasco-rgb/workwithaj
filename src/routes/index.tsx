@@ -1,11 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroAsset from "@/assets/aj-portrait.jpg.asset.json";
 import servicesAsset from "@/assets/aj-services.png.asset.json";
-import workSmmAsset from "@/assets/work-smm.png.asset.json";
-import workChatAsset from "@/assets/work-chat.png.asset.json";
-import workDesignAsset from "@/assets/work-design.jpg.asset.json";
-import workSchedulingAsset from "@/assets/work-scheduling.png.asset.json";
-import workVaAsset from "@/assets/work-va.jpg.asset.json";
 import logoCapcut from "@/assets/logo-capcut-new.png.asset.json";
 import logoCanva from "@/assets/logo-canva-new.png.asset.json";
 import logoMsOffice from "@/assets/logo-msoffice-new.png.asset.json";
@@ -33,6 +28,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "AJ Pasco is a reliable virtual assistant, social media manager, and chat support specialist based in the Philippines." },
       { property: "og:title", content: "AJ Pasco — Virtual Assistant Portfolio" },
       { property: "og:description", content: "Virtual assistance, social media management, content design, and multilingual chat support." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Portfolio,
@@ -88,11 +85,11 @@ const experience = [
 ];
 
 const works = [
-  { tag: "Social Media", title: "Social Media Campaign — Doventra", desc: "End-to-end campaign management including content calendar, Canva graphics, and engagement tracking." },
-  { tag: "Chat Support", title: "Multilingual Customer Support", desc: "Handled high-volume support queues for an ecommerce brand with measurable CSAT improvements." },
-  { tag: "Design", title: "Promotional Marketing Assets", desc: "Created promotional banners, posters, and social tiles aligned with brand voice and visual identity." },
-  { tag: "Operations", title: "Content Scheduling Workflow", desc: "Built a streamlined content scheduling workflow using Meta Business Suite and Buffer." },
-  { tag: "Virtual Assistance", title: "Administrative Workflow Setup", desc: "Organized digital records and built repeatable admin workflows that improved operational efficiency." },
+  { tag: "Social Media", title: "Social Media Campaign", role: "Social Media Manager", organization: "Doventra Productions", desc: "Managed content planning, Canva graphics, post scheduling, audience engagement, and performance monitoring to strengthen the brand’s online presence." },
+  { tag: "Chat Support", title: "Multilingual Customer Support", role: "Chat Support Specialist", organization: "Nick Ecommerce", desc: "Supported customers with order tracking, product questions, payments, and account concerns while managing multiple conversations with care." },
+  { tag: "Design", title: "Promotional Marketing Assets", role: "Canva Editor Intern", organization: "ITalk Philippines", desc: "Designed educational and promotional graphics aligned with brand guidelines and campaign goals for digital marketing initiatives." },
+  { tag: "Operations", title: "Content Scheduling Workflow", role: "Social Media Management", organization: "Doventra Productions", desc: "Organized a consistent publishing workflow using Meta Business Suite and Buffer to keep content planned and on schedule." },
+  { tag: "Virtual Assistance", title: "Administrative Workflow Setup", role: "General Virtual Assistant", organization: "Organization not specified", desc: "Organized digital records and established repeatable administrative workflows to support smoother day-to-day operations." },
 ];
 
 const testimonials = [
@@ -117,8 +114,6 @@ const testimonials = [
     name: "Daniel C.", role: "E-commerce Founder",
   },
 ];
-
-const workImages = [workSmmAsset.url, workChatAsset.url, workDesignAsset.url, workSchedulingAsset.url, workVaAsset.url];
 
 function Logo() {
   return (
@@ -388,23 +383,20 @@ function Portfolio() {
           {works.map((w, i) => {
             const start = i === 3 ? "lg:col-start-2" : i === 4 ? "lg:col-start-4" : "";
             return (
-            <Reveal key={w.title} delay={i * 100} className={`lg:col-span-2 ${start}`}>
-              <article className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-soft cursor-pointer active:scale-[0.98]">
-                <div className="relative aspect-[16/10] overflow-hidden bg-secondary border-4 border-primary/60">
-                  <img
-                    src={workImages[i]}
-                    alt={w.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <span className="inline-block rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-foreground">{w.tag}</span>
-                  <h3 className="mt-3 text-lg font-semibold">{w.title}</h3>
+              <div key={w.title} className={`lg:col-span-2 ${start}`}>
+                <article className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="font-display text-4xl leading-none text-primary">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="inline-block rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-foreground">{w.tag}</span>
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold">{w.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{w.desc}</p>
-                </div>
-              </article>
-            </Reveal>
+                  <div className="mt-auto border-t border-border pt-4 mt-5">
+                    <p className="text-xs font-medium uppercase tracking-[0.15em] text-primary">{w.role}</p>
+                    <p className="mt-1 text-sm font-semibold">{w.organization}</p>
+                  </div>
+                </article>
+              </div>
             );
           })}
         </div>
@@ -434,7 +426,7 @@ function Portfolio() {
                   <h3 className="mt-2 text-lg font-semibold">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
         </div>

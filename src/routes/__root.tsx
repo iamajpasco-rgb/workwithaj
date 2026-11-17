@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import type { ErrorComponentProps } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -34,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -87,8 +88,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "workwithaj.online" },
       { name: "twitter:description", content: "A personal portfolio and professional services website showcasing AJ's skills, experience, and work. The platform highlights expertise in virtual assistance, co" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/40338055-3ee1-4c52-831f-43a5dbed023c/id-preview-03cde580--d1e3ca0c-4eb5-4ed8-bdfa-0eaa6efed386.lovable.app-1780802696750.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/40338055-3ee1-4c52-831f-43a5dbed023c/id-preview-03cde580--d1e3ca0c-4eb5-4ed8-bdfa-0eaa6efed386.lovable.app-1780802696750.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
