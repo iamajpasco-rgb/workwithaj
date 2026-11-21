@@ -426,7 +426,7 @@ function Portfolio() {
                   <h3 className="mt-2 text-lg font-semibold">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
